@@ -13,7 +13,6 @@ module.exports = function(Todo) {
 	Todo.validate('text', textValidator, { message: 'Only peremoga allowed!'});
 
 	Todo.observe('after delete', function (ctx, next) {
-		console.log(ctx);
 		io.getSocketIo().emit('todo:deleted', ctx.where._id);
 		next();
 	});
