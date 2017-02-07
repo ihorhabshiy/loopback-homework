@@ -155,13 +155,7 @@ function bindEventListeners(){
 			var todoContainer = event.target.parentNode;
 			var id = todoContainer.id;
 			
-			sendDeleteTodoReq(id).then(function (response) {
-				if (response.ok) {
-					return;
-				} 
-			}).then(function () {
-				todoContainer.remove();
-			});
+			sendDeleteTodoReq(id);
 		}
 	});
 
