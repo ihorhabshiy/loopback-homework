@@ -2,11 +2,17 @@
   "name": "todo",
   "plural": "todos",
   "base": "PersistedModel",
-  "idInjection": true,
+  "idInjection": false,
   "options": {
     "validateUpsert": true
   },
   "properties": {
+    "_id": {
+      "type": "string",
+      "required": false,
+      "id": true,
+      "generated": true
+    },
     "done": {
       "type": "boolean",
       "required": true,
